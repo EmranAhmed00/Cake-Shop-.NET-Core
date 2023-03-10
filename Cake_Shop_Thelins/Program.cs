@@ -1,7 +1,12 @@
+using Cake_Shop_Thelins.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddMvc();
+builder.Services.AddScoped<ICakeRepository, MockCakeRepository>();
+builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
 
 var app = builder.Build();
 
